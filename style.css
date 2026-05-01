@@ -172,8 +172,8 @@ p {
 }
 
 .hero-media {
-  height: min(84vh, 920px);
-  min-height: 560px;
+  height: clamp(380px, calc(100dvh - 88px), 920px);
+  min-height: 0;
 }
 
 /* Image fallback keeps layout stable and atmospheric when files are missing. */
@@ -482,12 +482,16 @@ p {
   .hero-cta,
   .visit-actions {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .btn {
-    width: 100%;
-    min-height: 48px;
+    width: auto;
+    min-height: 38px;
+    padding: 8px 14px;
+    font-size: 0.83rem;
   }
 
   .hero {
@@ -495,8 +499,7 @@ p {
   }
 
   .hero-media {
-    min-height: 380px;
-    height: 58vh;
+    height: clamp(320px, calc(100dvh - 120px), 620px);
   }
 
   .hero-copy-wrap {
